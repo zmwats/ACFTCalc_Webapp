@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - ACFT Calculator</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="/static/fonts/font-awesome.min.css">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#"><span style="color: rgb(251, 211, 3);">ACFT Calculator</span></a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image: url('/static/img/acft-bg.jpg');">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p class="intro-text">Calculating your Army Combat Fitness Test (ACFT) score has never been easier. Our user-friendly ACFT Score Calculator takes the guesswork out of your performance assessment.&nbsp;<br><br><br></p><a class="btn btn-link btn-circle" role="button" href="#acftcalc"><i class="fa fa-angle-double-down animated"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center content-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>How It Works:<br></h2>
+                    <p><strong>Select Your Event:</strong> Choose the specific ACFT event you want to calculate your score for. We cover all six events, including the 3-repetition Maximum Deadlift, Standing Power Throw, Hand-Release Push-Up, Sprint-Drag-Carry, Leg Tuck, and Two-Mile Run.</p>
+                    <p><strong>Input Your Results:</strong> Enter your performance data for the chosen event. For example, if you're calculating your score for the Two-Mile Run, just enter your completion time.<br></p>
+                    <p><strong>Get Instant Results:</strong> In a matter of seconds, our ACFT Score Calculator will generate your score for the selected event. You'll know exactly where you stand and what you need to work on.<br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center content-section" id="acftcalc">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="acftForm">
+                        <label for="age">Age:</label>
+                        <select id="age" name="age" required>
+                            <option value="17-21">17-21</option>
+                            <option value="22-26">22-26</option>
+                            <option value="27-31">27-31</option>
+                            <option value="32-36">32-36</option>
+                            <option value="37-41">37-41</option>
+                            <option value="42-46">42-46</option>
+                            <option value="47-51">47-51</option>
+                            <option value="52-56">52-56</option>
+                            <option value="57-61">57-61</option>
+                            <option value="62">62+</option>
+                        </select><br><br>
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select><br><br>
+                        <label for="mdl">Maximum Dead Lift (lbs):</label>
+                        <input type="number" id="mdl" name="mdl" required><br><br>
+
+                        <label for="hrp">Hand Release Pushups:</label>
+                        <input type="number" id="hrp" name="hrp" required><br><br>
+
+                        <label for="spt">Standing Power Throw (ft):</label>
+                        <input type="text" id="spt" name="spt" required><br><br>
+
+                        <label for="sdc">Sprint Drag Carry (M:SS):</label>
+                        <input type="text" id="sdc" name="sdc" pattern="^([0-5]?[0-9]):([0-5]?[0-9])$" placeholder="m:ss" required><br><br>
+
+                        <label for="plnk">Plank (M:SS):</label>
+                        <input type="text" id="plnk" name="plnk" pattern="^([0-5]?[0-9]):([0-5]?[0-9])$" placeholder="m:ss" required><br><br>
+
+                        <label for="tmr">Two Mile Run (MM:SS):</label>
+                        <input type="text" id="tmr" name="tmr" pattern="^([0-5]?[0-9]):([0-5]?[0-9])$" placeholder="mm:ss" required><br><br>
+
+                        <button type="button" onclick="calculateScore()">Calculate Score</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <h3>Results</h3>
+    <div id="results"></div>
+    </section>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/grayscale.js"></script>
+    <script src="/static/js/ACFT_WebJS.js"></script>
+</body>
+</html>
